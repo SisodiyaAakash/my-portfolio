@@ -1,0 +1,19 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "Welcome to Our Web Agency project repository! This repository contains the source code for our upcoming web development agency website.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Aakash Sisodiya",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-cssmin": "^5.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}

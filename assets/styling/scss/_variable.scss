@@ -1,0 +1,51 @@
+// Colors variables and conditions for different theme
+$black: #000000;
+$white: #ffffff;
+$dark-grey: #0c0c0c;
+$red: #e94848;
+$green: #27ae60;
+$yellow: #fff200;
+
+// Theme Variables
+$primary-color: $black;
+$secondary-color: $white;
+$default-text: $primary-color;
+$default-bg: $secondary-color;
+$default-border: $primary-color;
+$default-box-shadow: 0 0 6px 6px rgba($black, 0.4);
+$dark-mode-bg: $primary-color;
+$dark-mode-text: $secondary-color;
+$dark-mode-border: $secondary-color;
+$dark-mode-box-shadow: 0 0 6px 6px rgba($white, 0.4);
+
+// Typography Variables
+$primary-font: "Oswald";
+$secondary-font: "Syne";
+
+// Font Weight
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black-weight: 900;
+
+// Utilities
+$transition-fast: 350ms all ease;
+$transition: 550ms all ease;
+$transition-slow: 750ms all ease;
+
+// Responsive Breakpoints (no need to define default screen size : Desktop)
+$breakpoint-xsm: 479px; // Extra small screens
+$breakpoint-sm: 767px; // Small screens
+$breakpoint-md: 991px; // Medium screens
+$breakpoint-lg: 1199px; // Large screens
+
+// Border Variables
+$border-rounded: 50%;
+$border-low: 8px;
+$border-regular: 16px;
+$border-medium: 24px;
+$border-high: 48px;

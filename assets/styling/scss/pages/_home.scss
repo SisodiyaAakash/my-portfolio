@@ -1,0 +1,43 @@
+body {
+  // Home Page
+  section {
+    // Hero Section
+    &.hero-section-wrap {
+      div.hero-section {
+        padding: 80px 0;
+
+        @media screen and (max-width: $breakpoint-lg) {
+          padding: 60px 0;
+        }
+        @media screen and (max-width: $breakpoint-md) {
+          padding: 40px 0;
+        }
+        @media screen and (max-width: $breakpoint-sm) {
+          padding: 20px 0;
+        }
+      }
+    }
+
+    // Hero CTA Section
+    &.hero-cta-section-wrap {
+      div.hero-cta-section {
+        .cta-group {
+          @include flex-center-wrap;
+          column-gap: 50px;
+          row-gap: 30px;
+          justify-content: space-between;
+
+          @media screen and (max-width: $breakpoint-md) {
+            column-gap: 40px;
+          }
+          @media screen and (max-width: $breakpoint-sm) {
+            column-gap: 30px;
+          }
+          @media screen and (max-width: $breakpoint-xsm) {
+            row-gap: 20px;
+          }
+        }
+      }
+    }
+  }
+}

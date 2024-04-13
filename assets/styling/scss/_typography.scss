@@ -1,0 +1,249 @@
+// Font Families
+// Primary Oswald Font
+@font-face {
+  font-family: $primary-font;
+  src: url("../fonts/Oswald-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+// Secondary Syne Font
+@font-face {
+  font-family: $secondary-font;
+  src: url("../fonts/Syne-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: $secondary-font;
+  src: url("../fonts/Syne-Medium.woff2") format("woff2");
+  font-weight: $medium;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: $secondary-font;
+  src: url("../fonts/Syne-SemiBold.woff2") format("woff2");
+  font-weight: $semi-bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: $secondary-font;
+
+  font-size: 16px;
+  font-weight: $regular;
+  line-height: 24px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  button {
+    margin: 0;
+
+    a {
+      @include typography(inherit, inherit);
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: $primary-font;
+    font-weight: $regular;
+    text-transform: uppercase;
+  }
+  h4,
+  h5,
+  h6,
+  a,
+  p,
+  li {
+    font-family: $secondary-font;
+    font-weight: $regular;
+  }
+  input,
+  textarea,
+  label,
+  button {
+    font-family: $secondary-font;
+  }
+  input,
+  textarea {
+    font-weight: $regular;
+  }
+  label {
+    font-weight: $medium;
+  }
+  input[type="submit"],
+  button {
+    font-weight: $semi-bold;
+    text-decoration: none;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+
+  // Typography for headings
+  h1 {
+    @include typography(114px, 120px);
+
+    @media screen and (max-width: $breakpoint-lg) {
+      @include typography(100px, 106px);
+    }
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(90px, 95px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(70px, 75px);
+    }
+    @media screen and (max-width: $breakpoint-xsm) {
+      @include typography(50px, 55px);
+    }
+  }
+
+  h2 {
+    @include typography(80px, 86px);
+
+    @media screen and (max-width: $breakpoint-lg) {
+      @include typography(70px, 76px);
+    }
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(60px, 65px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(50px, 55px);
+    }
+    @media screen and (max-width: $breakpoint-xsm) {
+      @include typography(40px, 45px);
+    }
+  }
+
+  h3 {
+    @include typography(60px, 66px);
+
+    @media screen and (max-width: $breakpoint-lg) {
+      @include typography(50px, 56px);
+    }
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(40px, 45px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(30px, 35px);
+    }
+    @media screen and (max-width: $breakpoint-xsm) {
+      @include typography(20px, 25px);
+    }
+  }
+
+  h4 {
+    @include typography(48px, 54px);
+
+    @media screen and (max-width: $breakpoint-lg) {
+      @include typography(40px, 46px);
+    }
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(32px, 36px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(24px, 28px);
+    }
+    @media screen and (max-width: $breakpoint-xsm) {
+      @include typography(20px, 22px);
+    }
+  }
+
+  h5 {
+    @include typography(32px, 35px);
+
+    @media screen and (max-width: $breakpoint-lg) {
+      @include typography(28px, 30px);
+    }
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(24px, 26px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(20px, 22px);
+    }
+    @media screen and (max-width: $breakpoint-xsm) {
+      @include typography(16px, 18px);
+    }
+  }
+
+  h6 {
+    @include typography(24px, 26px);
+
+    @media screen and (max-width: $breakpoint-lg) {
+      @include typography(20px, 22px);
+    }
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(18px, 19px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(16px, 17px);
+    }
+  }
+
+  // Typography for paragraphs and list items
+  p,
+  li {
+    @include typography(16px, 18px);
+
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(15px, 17px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(14px, 20px);
+    }
+  }
+
+  // Typography for form fields
+  input,
+  textarea,
+  select {
+    @include typography(16px, 18px);
+
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(15px, 17px);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(14px, 20px);
+    }
+  }
+
+  input[type="submit"],
+  button {
+    @include typography(18px, 1);
+    text-align: center;
+    text-transform: capitalize;
+
+    @media screen and (max-width: $breakpoint-md) {
+      @include typography(16px, 1);
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      @include typography(14px, 1);
+    }
+  }
+}

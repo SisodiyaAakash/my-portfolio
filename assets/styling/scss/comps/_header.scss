@@ -1,0 +1,44 @@
+body {
+  header#header {
+    padding: 5px 0;
+    margin-bottom: auto;
+    width: 100%;
+    transition: $transition;
+    position: relative;
+
+    &.fixed-header {
+      z-index: 999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: $transition;
+    }
+
+    nav.navbar {
+      .nav-inner-wrap {
+        @include flex-center;
+        justify-content: space-between;
+
+        .theme-toggle-wrap {
+          @include flex-center;
+          justify-content: center;
+
+          button.dark-mode-btn {
+            @include flex-center;
+            justify-content: center;
+            padding: 5px 15px;
+            border-radius: $border-high;
+
+            span {
+              &:not(.hide) {
+                @include flex-center;
+                justify-self: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

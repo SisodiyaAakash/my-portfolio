@@ -1,0 +1,154 @@
+body {
+  // This scss file contains theme specific styling only
+  // Foregrond and/or background color in light (default) theme mode
+  background-color: $default-bg;
+  color: $default-text;
+  transition: background-color 350ms ease, color 350ms ease;
+
+  // Header styling
+  header#header {
+    background-color: $default-bg;
+
+    &.fixed-header {
+      box-shadow: 0 2px 4px rgba($black, 0.1);
+    }
+  }
+
+  // Typography styling
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    color: $default-text;
+  }
+
+  input[type="submit"],
+  button {
+    background-color: $default-bg;
+    color: $default-text;
+    border-color: $default-border;
+    transition: $transition;
+
+    img {
+      transition: $transition;
+      filter: brightness(0);
+    }
+
+    &:hover {
+      transition: $transition;
+      background-color: $black;
+      color: $white;
+      box-shadow: $default-box-shadow;
+
+      img {
+        filter: brightness(1);
+      }
+    }
+  }
+
+  // Loader Wrap styling
+  section.loader-wrap {
+    background-color: $default-bg;
+  }
+
+  // Foregrond and/or background color in dark theme mode
+  &.dark-mode {
+    background-color: $dark-mode-bg;
+    color: $dark-mode-text;
+
+    header#header {
+      background-color: $dark-mode-bg;
+
+      &.fixed-header {
+        box-shadow: 0 2px 4px rgba($white, 0.1);
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+      color: $dark-mode-text;
+    }
+
+    input[type="submit"],
+    button {
+      background-color: $dark-mode-bg;
+      color: $dark-mode-text;
+      border-color: $dark-mode-border;
+
+      img {
+        filter: brightness(1);
+      }
+
+      &:hover {
+        background-color: $default-bg;
+        color: $default-text;
+        box-shadow: $dark-mode-box-shadow;
+
+        img {
+          filter: brightness(0);
+        }
+      }
+    }
+
+    // Loader Wrap styling
+    section.loader-wrap {
+      background-color: $dark-mode-bg;
+    }
+  }
+}
+
+// Custom Scroll Bar
+// Light (default) theme mode styles for scrollbars
+* {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: if(is-dark-mode(), $dark-mode-bg, $primary-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: if(
+      is-dark-mode(),
+      rgba($dark-mode-text, 0.6),
+      rgba($primary-color, 0.6)
+    );
+
+    &:hover {
+      background: if(
+        is-dark-mode(),
+        rgba($dark-mode-text, 0.85),
+        rgba($primary-color, 0.85)
+      );
+    }
+  }
+}
+
+// Dark theme mode styles for scrollbars
+body.dark-mode {
+  * {
+    &::-webkit-scrollbar-track {
+      background: $dark-mode-bg;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($dark-mode-text, 0.6);
+
+      &:hover {
+        background: rgba($dark-mode-text, 0.85);
+      }
+    }
+  }
+}
