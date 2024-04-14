@@ -77,13 +77,17 @@ function scriptWrapper($) {
          $('body').toggleClass('dark-mode');
 
          // For loader
-         $('.loader-wrap img.loader-gif').toggleClass('hide');
+         var loaderImg = $('.loader-wrap img.loader-gif');
+         var currentImgSrc = loaderImg.attr('src');
+         var newImgSrc = currentImgSrc.includes('dark-mode') ? './assets/media/brand/default-animated-logo.gif' : './assets/media/brand/dark-mode-animated-logo.gif';
+         loaderImg.attr('src', newImgSrc);
 
          // Hiding loader-wrap after toggleTheme is completed
          setTimeout(function () {
             $('section.loader-wrap').addClass('hide');
          }, 500);
       },
+
    }; // end pelicanUi
 
    $(document).ready(pelicanUi.initialize);
