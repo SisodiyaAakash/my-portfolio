@@ -7,7 +7,7 @@ function scriptWrapper($) {
        * need to remove async keyword for better execution
        */
       initialize: async function () {
-         pelicanUi.customFunctions();
+         await pelicanUi.customFunctions();
          pelicanUi.scrollFunctions();
          pelicanUi.sliderFunctions();
          pelicanUi.registerEventHandlers();
@@ -47,7 +47,8 @@ function scriptWrapper($) {
        * Hide loader gif
        */
       hideLoader: function () {
-         $('section.loader-wrap').remove();
+         // $('section.loader-wrap').remove();
+         $('section.loader-wrap').addClass('hide');
 
          $('html, body').animate({ scrollTop: 0 });
          return false;
@@ -68,12 +69,20 @@ function scriptWrapper($) {
        */
       toggleThemeMode: function (e) {
          e.preventDefault();
+         // Show loader-wrap
+         $('section.loader-wrap').removeClass('hide');
+
          // For Entire Project
          $(this).find('span').toggleClass('hide');
          $('body').toggleClass('dark-mode');
 
          // For loader
          $('.loader-wrap img.loader-gif').toggleClass('hide');
+
+         // Hiding loader-wrap after toggleTheme is completed
+         setTimeout(function () {
+            $('section.loader-wrap').addClass('hide');
+         }, 500);
       },
    }; // end pelicanUi
 
